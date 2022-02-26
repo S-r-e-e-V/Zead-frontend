@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "css-loader": "^6.6.0",
     "next": "12.1.0",
     "postcss-loader": "^6.2.1",

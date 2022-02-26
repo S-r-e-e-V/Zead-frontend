@@ -1,12 +1,5 @@
-import Image from "next/image"
-import Hero from "../components/hero/hero"
+import Profile from "./profile";
 
-export default function Main(){
-    return(
-        <>
-        
-            <Hero />
-        
-        </>
-    )
+export default function Main() {
+  return <Profile />;
 }
