@@ -1,0 +1,776 @@
+
+/*
+ * See: https://fonts.google.com/license/googlerestricted
+ */
+/* armenian */
+@font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkr74vu-A.woff2) format('woff2');
+    unicode-range: U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQku74vu-A.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* devanagari */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvr4vu-A.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+  }
+  /* georgian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkoL4vu-A.woff2) format('woff2');
+    unicode-range: U+0589, U+10A0-10FF, U+2D00-2D2F;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvL4vu-A.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* gurmukhi */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQknL4vu-A.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A01-0A75, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvb4vu-A.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* lao */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQktr4vu-A.woff2) format('woff2');
+    unicode-range: U+0E81-0EDF, U+25CC;
+  }
+  /* tamil */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkqb4vu-A.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+  }
+  /* thai */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkq74vu-A.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQksL4vu-A.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQksb4vu-A.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkv74v.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* armenian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkr74vu-A.woff2) format('woff2');
+    unicode-range: U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQku74vu-A.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* devanagari */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvr4vu-A.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+  }
+  /* georgian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkoL4vu-A.woff2) format('woff2');
+    unicode-range: U+0589, U+10A0-10FF, U+2D00-2D2F;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvL4vu-A.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* gurmukhi */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQknL4vu-A.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A01-0A75, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvb4vu-A.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* lao */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQktr4vu-A.woff2) format('woff2');
+    unicode-range: U+0E81-0EDF, U+25CC;
+  }
+  /* tamil */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkqb4vu-A.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+  }
+  /* thai */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkq74vu-A.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQksL4vu-A.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQksb4vu-A.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkv74v.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* armenian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkr74vu-A.woff2) format('woff2');
+    unicode-range: U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQku74vu-A.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* devanagari */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvr4vu-A.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+  }
+  /* georgian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkoL4vu-A.woff2) format('woff2');
+    unicode-range: U+0589, U+10A0-10FF, U+2D00-2D2F;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvL4vu-A.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* gurmukhi */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQknL4vu-A.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A01-0A75, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkvb4vu-A.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* lao */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQktr4vu-A.woff2) format('woff2');
+    unicode-range: U+0E81-0EDF, U+25CC;
+  }
+  /* tamil */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkqb4vu-A.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+  }
+  /* thai */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkq74vu-A.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQksL4vu-A.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQksb4vu-A.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UairENHsxJlGDuGo1OIlL3L2JB874GPhFI9_IqmuRqGpjeaLi42kO8QvnQkv74v.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* armenian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiIUvaYr.woff2) format('woff2');
+    unicode-range: U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjYUvaYr.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* devanagari */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjMUvaYr.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+  }
+  /* georgian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPi0UvaYr.woff2) format('woff2');
+    unicode-range: U+0589, U+10A0-10FF, U+2D00-2D2F;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjEUvaYr.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* gurmukhi */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPhEUvaYr.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A01-0A75, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjAUvaYr.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* lao */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjsUvaYr.woff2) format('woff2');
+    unicode-range: U+0E81-0EDF, U+25CC;
+  }
+  /* tamil */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiQUvaYr.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+  }
+  /* thai */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiYUvaYr.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPj0UvaYr.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjwUvaYr.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* armenian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiIUvaYr.woff2) format('woff2');
+    unicode-range: U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjYUvaYr.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* devanagari */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjMUvaYr.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+  }
+  /* georgian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPi0UvaYr.woff2) format('woff2');
+    unicode-range: U+0589, U+10A0-10FF, U+2D00-2D2F;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjEUvaYr.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* gurmukhi */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPhEUvaYr.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A01-0A75, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjAUvaYr.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* lao */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjsUvaYr.woff2) format('woff2');
+    unicode-range: U+0E81-0EDF, U+25CC;
+  }
+  /* tamil */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiQUvaYr.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+  }
+  /* thai */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiYUvaYr.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPj0UvaYr.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjwUvaYr.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* armenian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiIUvaYr.woff2) format('woff2');
+    unicode-range: U+0308, U+0530-058F, U+2010, U+25CC, U+FB13-FB17;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjYUvaYr.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* devanagari */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjMUvaYr.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+  }
+  /* georgian */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPi0UvaYr.woff2) format('woff2');
+    unicode-range: U+0589, U+10A0-10FF, U+2D00-2D2F;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjEUvaYr.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* gurmukhi */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPhEUvaYr.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A01-0A75, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjAUvaYr.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* lao */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjsUvaYr.woff2) format('woff2');
+    unicode-range: U+0E81-0EDF, U+25CC;
+  }
+  /* tamil */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiQUvaYr.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+  }
+  /* thai */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPiYUvaYr.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPj0UvaYr.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjwUvaYr.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/googlesans/v41/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+/* ===============================================
+    TABLE  OF CONTENT:
+    ------------------
+- 1/ CSS Basic classes
+- 2/ base
+- 3/ elements
+- 4/ Layouts
+- 5/ Pages
+=============================================== */
+
+// style.scss
+
+/* ===================
+- 1/ CSS Basic classes
+=======================*/
+
+@import "1-helpers/colors";
+@import "1-helpers/mixins";
+@import "1-helpers/variables";
+@import "1-helpers/global";
+@import "1-helpers/classes";
+@import "1-helpers/spacing";
+@import "1-helpers/margin";
+@import "1-helpers/padding";
+
+/* ===================
+2/ base
+=======================*/
+
+@import "0-base/base";
+@import "0-base/typography";
+
+/* ===================
+3/ elements
+=======================*/
+
+@import "2-elements/buttons";
+@import "2-elements/forms";
+@import "2-elements/tabs";
+@import "2-elements/dropdowns";
+@import "2-elements/menus";
+@import "2-elements/breadcrumb";
+@import "2-elements/accordion";
+@import "2-elements/avatars";
+@import "2-elements/popups";
+@import "2-elements/card_items";
+@import "2-elements/creators_items";
+@import "2-elements/collections_items";
+@import "2-elements/menus";
+
+/* ===================
+4/ Layouts
+=======================*/
+
+@import "3-Layouts/header";
+@import "3-Layouts/hero";
+@import "3-Layouts/footer";
+@import "3-Layouts/sections";
+
+/* ===================
+- 5/ Pages
+=======================*/
+
+@import "4-Pages/elements_page";
+@import "4-Pages/profile_page";
+@import "4-Pages/register";
+@import "4-Pages/forum_page";
+@import "4-Pages/questions_page";
+@import "4-Pages/contact";
+@import "4-Pages/404";
+@import "4-Pages/requests_page";
+@import "4-Pages/submit_requests";
+@import "4-Pages/upcoming_projects";
+@import "4-Pages/blog";
+@import "4-Pages/_ranking_page";
+@import "4-Pages/index";
+
+body {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.community {
+    margin-top: 100px;
+    @include tablet_vert_screen {
+        margin-top: 50px;
+    }
+    .section__title {
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section__text {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .community__items {
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            @include card_item;
+            @include tablet_vert_screen {
+                margin-bottom: 20px;
+            }
+            padding: 30px;
+            .logo {
+                height: 5rem;
+                width: 5rem;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #edf3f5;
+                &.is_twitter {
+                    background: rgba(5, 171, 246, 0.1);
+                }
+                &.is_discord {
+                    background: rgba(114, 137, 217, 0.1);
+                }
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0px 1.5rem;
+}
+
+.hero-banner {
+    height: 100%;
+    .swiper-wrapper {
+        
+    }
+    .swiper-slide {
+        height:auto;
+    }
+}
+
+.card__item {
+    margin: 5vh 0;
+    max-width: 100%;
+}

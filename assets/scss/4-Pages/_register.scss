@@ -1,0 +1,44 @@
+.register {
+    background-image: url(../../../assets/img/bg/log.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    .box {
+        backdrop-filter:blur(10px);
+        text-align: left;
+        background-color: rgba(256,256,256,0.9);
+        a{
+            color: #000;
+            font-weight: 500;
+        }
+    }
+    .left_part {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+    .right_part {
+        padding: 60px 0;
+    }
+}
+
+.login {
+    height: calc(100vh - 89px);
+
+    .box {
+        backdrop-filter:blur(10px);
+        text-align: left;
+        background-color: rgba(256,256,256,0.7);
+        a{
+            color: #000;
+            font-weight: 500;
+        }
+    }
+    @include tablet_vert_screen {
+        height: auto;
+    }
+}
