@@ -3,11 +3,12 @@ import CardProfile from '../components/cards/card-profile';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import Link from 'next/link';
 import CollectionProfile from '../components/collection/collection-profile';
+import HeroProfile from '../components/hero/hero-profile';
 
 const Profile = () => {
   return (
     <div>
-      {/* <HeroProfile /> */}
+      <HeroProfile />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-3 col-md-7 order-md-0 order-1">
