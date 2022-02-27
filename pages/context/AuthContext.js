@@ -3,39 +3,54 @@ import ConnectWallet from "../connect-wallet";
 import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import detectEthereumProvider from "@metamask/detect-provider";
+import Spinner from "../../components/Spinner";
+import { SimpleAlert } from "../../Utils/alert-templates";
+import MetaMaskOnboarding from "@metamask/onboarding";
 
 export const AuthContext = createContext({});
 
 export const AuthContextProvider = ({ children }) => {
   const [isAuthenticated, setisAuthenticated] = useState(false);
+  const [isLoading, setisLoading] = useState(false);
   const [provider, setprovider] = useState();
-  const value = {
-    isAuthenticated,
-    setisAuthenticated,
-  };
 
   useEffect(() => {
     detectEthereumProviderMetamask();
   }, []);
-
   const detectEthereumProviderMetamask = async () => {
     // this returns the provider, or null if it wasn't detected
+    setisLoading(true);
     const response = await detectEthereumProvider();
+    setisLoading(false);
+    console.log(response);
     setprovider(response);
     if (response) {
       if (response == window.ethereum) {
-        const chainId = await response.request({ method: "eth_chainId" });
-        console.log(chainId);
+        // const chainId = await response.request({ method: "eth_chainId" });
+        // console.log(chainId);
         // handleChainChanged(chainId);
         handleUserAccount(response);
         // listners
         response.on("chainChanged", handleChainChanged);
         response.on("accountsChanged", handleAccountsChanged);
       } else {
-        console.error("Do you have multiple wallets installed?");
+        SimpleAlert(
+          "Warning",
+          "Do you have multiple wallets installed? Connect to metamask.",
+          () => {},
+          false
+        );
       }
     } else {
-      console.log("Please install MetaMask!");
+      SimpleAlert(
+        "Warning",
+        "Please install metamask",
+        () => {
+          const onboarding = new MetaMaskOnboarding();
+          onboarding.startOnboarding();
+        },
+        false
+      );
     }
   };
   let currentAccount = null;
@@ -60,17 +75,26 @@ export const AuthContextProvider = ({ children }) => {
 
   // For now, 'eth_accounts' will continue to always return an array
   function handleAccountsChanged(accounts) {
-    // console.log(accounts);
     if (accounts.length === 0) {
       // alert and call connect on click confirmation
       // MetaMask is locked or the user has not connected any accounts
-      console.log("Please connect to MetaMask.");
+      SimpleAlert("Connect to Metamask", "Please connect to MetaMask", () => {
+        setisAuthenticated(false);
+      });
     } else if (accounts[0] !== currentAccount) {
       currentAccount = accounts[0];
+      console.log(currentAccount);
+      setisAuthenticated(true);
       // Do any other work!
     }
   }
-
+  const value = {
+    isAuthenticated,
+    setisAuthenticated,
+    isLoading,
+    setisLoading,
+    provider,
+  };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 export const ProtectRoute = ({ children }) => {
@@ -82,6 +106,14 @@ export const ProtectRoute = ({ children }) => {
         <ConnectWallet />
       </Layout>
     );
+  }
+  return children;
+};
+export const Loading = ({ children }) => {
+  const router = useRouter();
+  const { isLoading, isAuthenticated } = useContext(AuthContext);
+  if (isLoading) {
+    return <Spinner />;
   }
   return children;
 };

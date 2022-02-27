@@ -28,6 +28,13 @@
   resolved "https://registry.yarnpkg.com/@metamask/detect-provider/-/detect-provider-1.2.0.tgz#3667a7531f2a682e3c3a43eaf3a1958bdb42a696"
   integrity sha512-ocA76vt+8D0thgXZ7LxFPyqw3H7988qblgzddTDA6B8a/yU0uKV42QR/DhA+Jh11rJjxW0jKvwb5htA6krNZDQ==
 
+"@metamask/onboarding@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@metamask/onboarding/-/onboarding-1.0.1.tgz#14a36e1e175e2f69f09598e2008ab6dc1b3297e6"
+  integrity sha512-FqHhAsCI+Vacx2qa5mAFcWNSrTcVGMNjzxVgaX8ECSny/BJ9/vgXP9V7WF/8vb9DltPeQkxr+Fnfmm6GHfmdTQ==
+  dependencies:
+    bowser "^2.9.0"
+
 "@next/env@12.1.0":
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.1.0.tgz#73713399399b34aa5a01771fb73272b55b22c314"
@@ -125,6 +132,11 @@ binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
+
+bowser@^2.5.4, bowser@^2.9.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.11.0.tgz#5ca3c35757a7aa5771500c70a73a9f91ef420a8f"
+  integrity sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==
 
 braces@~3.0.2:
   version "3.0.2"
@@ -366,6 +378,13 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+metamask-onboarding@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/metamask-onboarding/-/metamask-onboarding-0.1.1.tgz#72081ecc47278b577be192e21b5669a9428e9458"
+  integrity sha512-WEgyB1LSoGrIth3yxIZ8ag6NDl9CYuuqV2qjaoOlPx2Rk76HXgpVVFMcdBsUR4D0QZxG/Blkg7gy67Isa4gUDQ==
+  dependencies:
+    bowser "^2.5.4"
+
 minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
@@ -517,6 +536,11 @@ prop-types@^15.5.0:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+react-confirm-alert@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/react-confirm-alert/-/react-confirm-alert-2.8.0.tgz#b3538c412432226e817478d3a2614538196ab204"
+  integrity sha512-qvNjJWuWUpTh+q4NecUjCMIWLNDl8IwW6JRIky5pzoiFBXsLWSA2Z1VsaDsQedwgyxEpKnMEJFETkDogBpv/kA==
 
 react-dom@17.0.2:
   version "17.0.2"
