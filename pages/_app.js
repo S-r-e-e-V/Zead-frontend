@@ -4,8 +4,7 @@ import "../assets/scss/style.scss";
 import "/assets/css/confirm-alert.css";
 import Layout from "../components/layout";
 
-import {
-  AuthContextProvider,
+import AuthContextProvider, {
   Loading,
   ProtectRoute,
 } from "./context/AuthContext";

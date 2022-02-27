@@ -9,7 +9,7 @@ import MetaMaskOnboarding from "@metamask/onboarding";
 
 export const AuthContext = createContext({});
 
-export const AuthContextProvider = ({ children }) => {
+export default function AuthContextProvider({ children }) {
   const [isAuthenticated, setisAuthenticated] = useState(false);
   const [isLoading, setisLoading] = useState(false);
   const [provider, setprovider] = useState();
@@ -96,7 +96,7 @@ export const AuthContextProvider = ({ children }) => {
     provider,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
+}
 export const ProtectRoute = ({ children }) => {
   const router = useRouter();
   const { isAuthenticated } = useContext(AuthContext);
