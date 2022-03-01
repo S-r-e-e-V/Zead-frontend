@@ -4,13 +4,16 @@ import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import detectEthereumProvider from "@metamask/detect-provider";
 import Spinner from "../../components/Spinner";
-import { SimpleAlert } from "../../Utils/alert-templates";
+import Alert from "../../Utils/alert-templates";
 import MetaMaskOnboarding from "@metamask/onboarding";
+
+import { postData } from "../api";
 
 export const AuthContext = createContext({});
 
 export default function AuthContextProvider({ children }) {
   const [isAuthenticated, setisAuthenticated] = useState(false);
+  const [userData, setUserData] = useState({ walletAddress: "", userId: "" });
   const [isLoading, setisLoading] = useState(false);
   const [provider, setprovider] = useState();
 
@@ -21,8 +24,6 @@ export default function AuthContextProvider({ children }) {
     // this returns the provider, or null if it wasn't detected
     setisLoading(true);
     const response = await detectEthereumProvider();
-    setisLoading(false);
-    console.log(response);
     setprovider(response);
     if (response) {
       if (response == window.ethereum) {
@@ -34,23 +35,27 @@ export default function AuthContextProvider({ children }) {
         response.on("chainChanged", handleChainChanged);
         response.on("accountsChanged", handleAccountsChanged);
       } else {
-        SimpleAlert(
-          "Warning",
-          "Do you have multiple wallets installed? Connect to metamask.",
-          () => {},
-          false
-        );
+        setisLoading(false);
+        Alert({
+          title: "Warning",
+          message:
+            "Do you have multiple wallets installed? Connect to metamask.",
+          buttonTextYes: "Ok",
+          closeOnClickOutside: false,
+        });
       }
     } else {
-      SimpleAlert(
-        "Warning",
-        "Please install metamask",
-        () => {
+      setisLoading(false);
+      Alert({
+        title: "Warning",
+        message: "Please install metamask",
+        handleClickYes: () => {
           const onboarding = new MetaMaskOnboarding();
           onboarding.startOnboarding();
         },
-        false
-      );
+        buttonTextYes: "Ok",
+        closeOnClickOutside: false,
+      });
     }
   };
   let currentAccount = null;
@@ -63,6 +68,7 @@ export default function AuthContextProvider({ children }) {
       .request({ method: "eth_accounts" })
       .then(handleAccountsChanged)
       .catch((err) => {
+        setisLoading(false);
         // Some unexpected error.
         // For backwards compatibility reasons, if no accounts are available,
         // eth_accounts will return an empty array.
@@ -74,17 +80,43 @@ export default function AuthContextProvider({ children }) {
   // connected.
 
   // For now, 'eth_accounts' will continue to always return an array
-  function handleAccountsChanged(accounts) {
+  const postWalletAddress = async (currentAccount) => {
+    try {
+      let payload = {
+        wallet_address: currentAccount,
+      };
+      const response = await postData(`/nft/new_user`, payload);
+      setisLoading(false);
+      if (response) {
+        setUserData({
+          walletAddress: currentAccount,
+          userId: response.user_id,
+        });
+        localStorage.setItem("waller_id", response.user_id);
+        setisAuthenticated(true);
+      }
+    } catch (err) {
+      Alert({
+        title: "Something went work",
+        message: err.response.error.message,
+      });
+    }
+  };
+  async function handleAccountsChanged(accounts) {
     if (accounts.length === 0) {
       // alert and call connect on click confirmation
       // MetaMask is locked or the user has not connected any accounts
-      SimpleAlert("Connect to Metamask", "Please connect to MetaMask", () => {
-        setisAuthenticated(false);
+      setisLoading(false);
+      setUserData({ walletAddress: "", userId: "" });
+      setisAuthenticated(false);
+      Alert({
+        title: "Connect to Metamask",
+        message: "Please connect to MetaMask",
+        buttonTextYes: "Ok",
       });
     } else if (accounts[0] !== currentAccount) {
       currentAccount = accounts[0];
-      console.log(currentAccount);
-      setisAuthenticated(true);
+      await postWalletAddress(currentAccount);
       // Do any other work!
     }
   }
@@ -94,13 +126,15 @@ export default function AuthContextProvider({ children }) {
     isLoading,
     setisLoading,
     provider,
+    userData,
+    setUserData,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 export const ProtectRoute = ({ children }) => {
   const router = useRouter();
   const { isAuthenticated } = useContext(AuthContext);
-  if (!isAuthenticated && router.pathname !== "/connect-profile") {
+  if (!isAuthenticated && router.pathname !== "/connect-wallet") {
     return (
       <Layout>
         <ConnectWallet />
@@ -110,8 +144,7 @@ export const ProtectRoute = ({ children }) => {
   return children;
 };
 export const Loading = ({ children }) => {
-  const router = useRouter();
-  const { isLoading, isAuthenticated } = useContext(AuthContext);
+  const { isLoading } = useContext(AuthContext);
   if (isLoading) {
     return <Spinner />;
   }

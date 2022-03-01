@@ -1,9 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./Menu/MobileMenu";
 import MegaMenu from "./Menu/MegaMenu";
+import { AuthContext } from "../../pages/context/AuthContext";
 const ExploreMenu = [
   {
     icon: "home-smile-2",
@@ -135,6 +135,8 @@ const ProfileMenu = [
 
 const Header = () => {
   const [isActive, setActive] = useState(false);
+  const { isAuthenticated } = useContext(AuthContext);
+
   const toggleClass = () => {
     setActive(!isActive);
   };
@@ -249,12 +251,17 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="header__btns">
-                  <Link className="btn btn-grad btn-sm" href="/connect-wallet">
-                    <a className="bg-primary rounded-3 px-3 py-2">
-                      <i className="ri-wallet-3-line" />
-                      Connect wallet
-                    </a>
-                  </Link>
+                  {!isAuthenticated && (
+                    <Link
+                      className="btn btn-grad btn-sm"
+                      href="/connect-wallet"
+                    >
+                      <a className="bg-primary rounded-3 px-3 py-2">
+                        <i className="ri-wallet-3-line" />
+                        Connect wallet
+                      </a>
+                    </Link>
+                  )}
                 </li>
               </ul>
             </div>

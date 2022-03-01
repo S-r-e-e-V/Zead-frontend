@@ -1,11 +1,12 @@
-import React, { useRef, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 // import Popup from "reactjs-popup";
 // import "reactjs-popup/dist/index.css";
-import { SimpleAlert } from "../Utils/alert-templates";
+import Alert from "../Utils/alert-templates";
 import { AuthContext } from "./context/AuthContext";
 import { useRouter } from "next/router";
+import { postData } from "./api";
 
 const wallets = [
   // {
@@ -42,23 +43,46 @@ const wallets = [
 
 const ConnectWallet = () => {
   const router = useRouter();
-  const { provider, setisAuthenticated } = useContext(AuthContext);
+  const { provider, isAuthenticated, setisAuthenticated, setUserData } =
+    useContext(AuthContext);
   let currentAccount = null;
+
+  const postWalletAddress = async (currentAccount) => {
+    try {
+      let payload = {
+        wallet_address: currentAccount,
+      };
+      const response = await postData(`/nft/new_user`, payload);
+      console.log(response);
+      if (response) {
+        setUserData({
+          walletAddress: currentAccount,
+          userId: response.user_id,
+        });
+        localStorage.setItem("waller_id", response.user_id);
+        setisAuthenticated(true);
+        router.push("/profile");
+      }
+    } catch (err) {
+      Alert({
+        title: "Something went work",
+        message: err?.response?.error?.message,
+      });
+    }
+  };
+
   const handleAccountsChanged = (accounts) => {
     if (accounts.length === 0) {
       // alert and call connect on click confirmation
       // MetaMask is locked or the user has not connected any accounts
-      SimpleAlert(
-        "Connect to Metamask",
-        "Please connect to MetaMask",
-        () => {}
-      );
+      Alert({
+        title: "Connect to Metamask",
+        message: "Please connect to MetaMask",
+        buttonTextYes: "Ok",
+      });
     } else if (accounts[0] !== currentAccount) {
       currentAccount = accounts[0];
-      console.log(currentAccount);
-      setisAuthenticated(true);
-      router.push("/profile");
-      // Do any other work!
+      postWalletAddress(currentAccount);
     }
   };
   const connect = () => {
@@ -70,21 +94,26 @@ const ConnectWallet = () => {
           if (err.code === 4001) {
             // EIP-1193 userRejectedRequest error
             // If this happens, the user rejected the connection request.
-
-            SimpleAlert(
-              "Connection error",
-              "Please connecct to metamask to login"
-            );
+            Alert({
+              title: "Connection error",
+              message: "Please connecct to metamask to login",
+              buttonTextYes: "Ok",
+            });
           } else {
             console.log(err);
-            SimpleAlert("Something went wrong", "Please login to metamask");
+            Alert({
+              title: "Something went wrong",
+              message: "Please login to metamask",
+              buttonTextYes: "Ok",
+            });
           }
         });
     } else {
-      SimpleAlert(
-        "Sorry Couldn't detect Metamask",
-        "Makesure metamask is installed."
-      );
+      Alert({
+        title: "Sorry Couldn't detect Metamask",
+        message: "Makesure metamask is installed.",
+        buttonTextYes: "Ok",
+      });
     }
   };
   const options = {
@@ -92,8 +121,12 @@ const ConnectWallet = () => {
     silent: false,
     timeout: 3000,
   };
-  // const ref = useRef();
-  // const closeTooltip = () => ref.current.close();
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/profile");
+    }
+  }, [isAuthenticated]);
+
   return (
     <div className="effect">
       <div className="container">
