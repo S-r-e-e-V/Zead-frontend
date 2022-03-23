@@ -90,9 +90,9 @@ export default function AuthContextProvider({ children }) {
       if (response) {
         setUserData({
           walletAddress: currentAccount,
-          userId: response.user_id,
+          userId: response.token,
         });
-        localStorage.setItem("waller_id", response.user_id);
+        localStorage.setItem("waller_id", response.token);
         setisAuthenticated(true);
       }
     } catch (err) {
